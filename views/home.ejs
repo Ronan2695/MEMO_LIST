@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=title%></title>
+	<link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+<body>
+
+   
+	<div id="outer-box">
+
+		<h1 id="title">MEMO LIST</h1>
+			
+			<form action="/create-task" method="POST">
+				
+				<div id="inner-box-1">
+
+					<p id="desc">DESCRIPTION</p>
+						
+					<input type="text" name="description" id="description" placeholder="Enter Your Description ">
+
+				</div>
+
+				<!-- Inner-Box-2 Start Here -->
+				<div id="inner-box-2">
+					<!-- Category Box -->
+					<div id="inner-box-3">
+
+						<p id="cat-desc"> CHOOSE A CATEGORY </p>
+
+						<select name="category" id="category">
+						   	
+						    <option value="work">WORK</option>
+						    <option value="office">OFFICE</option>
+						    <option value="personal">PERSONAL</option>
+						    <option value="banking">BANKING</option>
+	 					
+	 					</select>
+
+					</div>
+
+					<div id="inner-box-4">
+
+						<p id="datings"> DATE </p>
+
+						<input type="date" name="date" id="date">
+
+					</div>
+
+				</div>
+				<!-- Inner-Box-2 Ends here -->
+
+				<div id="inner-box-5">
+
+                        <button type="submit" id="but"> ADD TASK </button>
+
+                 </form>
+                    <!--Add task form ends here  -->
+                    
+                <form action="/delete-task/" method="POST">
+                        
+                            <button type="submit" id="but2" > DELETE TASK </button>
+                
+				</div>
+
+		
+
+			<!-- <TASK TEMPLATE} --> 
+            
+                <% for (let i of task_list) { %>
+
+			<div id="inner-box-6">
+                <!-- Task box outer  -->
+             
+				    <div id="task-outer">
+                    
+						    <input type="checkbox" id="check" name="date" value="<%=i.date%>" >
+
+			</form>
+
+					<p id="def"> <%= i.description %> </p>
+
+					<div id="task-cat">
+
+						<span> <%= i.category %> </span> 
+
+					</div>
+				
+				</div>
+					
+
+				<span id="task-date"> <%= i.date %>  </span>
+
+			</div>
+
+            <% } %>
+
+    </div>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+#outer-box
+{
+	height: 100vh;
+	width:39vw;
+	border:1px solid black;
+	margin-left:25%;
+	margin-top: 30px;
+}
+
+#title
+{
+	margin-left:35%;
+	color: #736666;
+	font-weight: bolder;
+}
+
+#inner-box-1
+{
+
+	height: 90px;
+	width: 39vw;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	margin-top: 30px;
+}
+
+#desc
+{
+	font-size:20px;
+	color: #736666;
+	font-weight: bolder;
+	margin: 10px;
+	margin-left: 30px;
+}
+
+#description
+{
+	height: 25px;
+	width: 500px;
+	margin-left: 30px;
+	border:1px solid black;
+}
+
+#inner-box-2
+{
+
+	display: flex;
+	flex-wrap: wrap;
+	height: 90px;
+	width: 39vw;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	/*margin-top: 30px;*/
+}
+
+#inner-box-3
+{
+
+	height: 90px;
+	width: 19vw;
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	/*margin-top: 30px;*/
+}
+
+#inner-box-4
+{
+
+	height: 90px;
+	width: 19.80vw;
+	/*border:1px solid black;*/
+	/*margin-top: 30px;*/
+}
+
+/*Inner-Box-3 Category*/
+
+#category
+{
+	position: absolute;
+	top:35%;
+	left:26%;
+	border:1px solid black;	
+	width: 250px;
+}
+
+#cat-desc
+{
+	margin-top: 10px;
+	margin-left: 13px;	
+	font-size: 20px;
+	font-weight: bolder;
+	color: #736666;
+}
+
+/*inner-box-4 Date*/
+
+#date{
+
+	border: 1px solid black;
+	margin-left: 20px;
+	margin-top: 1px;
+	width: 250px;
+
+}
+
+/*Date description*/
+#datings{
+
+	margin-top: 8px;
+	margin-left: 10px;
+	font-size: 19px;
+	font-weight: bolder;
+	color: #736666;
+
+}
+
+/*Inner-Box-5*/
+
+#inner-box-5
+{
+	height: 120px;
+	width: 39vw;
+	border-bottom: 1px solid black;
+}
+
+#but
+{
+	height: 50px;
+	width: 200px;
+	margin-top: 30px;
+	margin-left: 30px;
+    font-size: 20px;
+    
+}
+
+
+form #but2
+{
+    position: absolute;
+    bottom:49%;
+    left:49%;
+	height: 50px;
+	width: 200px;
+	/* margin-top: 30px;
+	margin-left: 300px; */
+	font-size: 20px;
+
+}
+
+/*Inner-box-6 TASK TEMPLATE*/
+
+#inner-box-6
+{
+
+	height: 100px;
+	width: 39vw;
+	border-bottom:1px solid black;
+
+}
+
+/*task box outer*/
+#task-outer
+{	
+	display: flex;
+	flex-wrap: wrap;
+	height: 60px;
+	width: 41vw;
+	/*border:1px solid black;*/
+}
+
+#check
+{
+	height:25px;
+	width: 25px;
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+#def
+{
+	font-size:25px;
+	margin-left: 50px;
+}
+
+#task-cat
+{
+	height: 30px;
+	width: 150px;
+	border:1px solid black;
+	margin-top: 26px;
+	margin-left: 130px;
+	/*font-size: 25px;*/
+
+}
+
+#task-cat span
+{
+	font-size: 20px;
+	padding: 6px;
+	margin-left: 10px;
+}
+
+#task-date
+{
+	font-size:20px;
+	margin-left: 100px;
+	margin-top:10px;
+}
