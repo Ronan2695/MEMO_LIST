@@ -3,6 +3,7 @@ const app = express(); //creating a new express app.
 const port= 8000;
 //requiring our db configuration
 const db= require('./configs/mongoose');
+const task = require('./models/tasks')
 
 //setting up the view engine
 app.set('view engine','ejs');
