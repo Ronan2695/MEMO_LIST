@@ -1,7 +1,6 @@
 const express = require('express'); // requiring express
 const app = express(); //creating a new express app.
 const port= 8000;
-// var bodyParser = require('body-parser');
 
 //setting up the view engine
 app.set('view engine','ejs');
@@ -10,7 +9,6 @@ app.set('views','./views');
 //acquiring our static files
 app.use(express.static('assets'));
 //reading the form data
-// app.use(bodyParser());
 app.use(express.urlencoded());
 
 
