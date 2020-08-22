@@ -3,7 +3,7 @@ const app = express(); //creating a new express app.
 const port= 8000;
 //requiring our db configuration
 const db= require('./configs/mongoose');
-const task = require('./models/tasks')
+const Task = require('./models/tasks')
 
 //setting up the view engine
 app.set('view engine','ejs');
@@ -27,33 +27,12 @@ app.listen(port, function(err){
 })
 
 //Defining a taskList
-
 var taskList =[
-
-    {
-        description: 'Buy Vegetables',
-        category:'PERSONAL',
-        date:'26-08-2020'
-    },
-
-    {
-        description: 'Deposit Cheques',
-        category:'BANK',
-        date:'30-08-2020'
-    },
-
-    {
-        description: 'Visit Mom',
-        category:'PERSONAL',
-        date:'07-08-2020'
-    },
 
 ]
 
 
-
-
-//rendering our first page
+//iterating through the array
 app.get('/', function(req,res){
     return res.render('home',{
 
@@ -70,17 +49,25 @@ app.post('/create-task', function(req,res){
     console.log(req.body);
 
     //pushing a new task from the form
-    taskList.push({
 
+    Task.create({
+        
         description:req.body.description,
-        category: req.body.category,
-        date:req.body.date   
+        category:req.body.category,
+        date:req.body.date
 
-    })
+    }, function(err,newTask){
 
-    return res.redirect('/');
+        if(err){
+            console.log('error in creating a contact')
+            return;
+        }
+        console.log('****',newTask)
+        return res.redirect('/');
+    });
+   
 
-})
+});
 
 //Deleting a contact
 app.post('/delete-task/', function(req,res){

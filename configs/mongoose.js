@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //tasks_lists_db is the db name
 //this is how momngoose will connect to the DB
-mongoose.connect('mongodb://localhost/task_list_db');
+mongoose.connect('mongodb://localhost/todo_db');
 
 //verifying the connection 
 const db = mongoose.connection;
