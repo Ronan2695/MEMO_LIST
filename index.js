@@ -26,24 +26,30 @@ app.listen(port, function(err){
 
 })
 
-//Defining a taskList
-var taskList =[
-
-]
-
 
 //iterating through the array
 app.get('/', function(req,res){
-    return res.render('home',{
+    
+    Task.find({},function(err,tasks){
+        
+        if(err)
+        {
+            console.log('Error in fetching contacts from DB')
+        }
 
-        title:"memo",
-        task_list:taskList
+        return res.render('home',{
 
-    })
+            title:"memo",
+            task_list:tasks
 
 
-})
+        })
 
+    });
+
+});
+
+//new task creation
 app.post('/create-task', function(req,res){
 
     console.log(req.body);
@@ -70,19 +76,38 @@ app.post('/create-task', function(req,res){
 });
 
 //Deleting a contact
-app.post('/delete-task/', function(req,res){
-    console.log(req.body);
-    let date =req.body; 
+// app.post('/delete-task/', function(req,res){
+//     console.log(req.body);
+//     let date =req.body; 
   
 
-        let taskIndex= taskList.findIndex(task => task.date == date);
+//         let taskIndex= taskList.findIndex(task => task.date == date);
     
 
-        if(taskIndex != -1)
-        {
-            taskList.splice(taskIndex,1);
-        }
+//         if(taskIndex != -1)
+//         {
+//             taskList.splice(taskIndex,1);
+//         }
 
       
-    return res.redirect('/');
+//     return res.redirect('/');
+// })
+
+app.get('/delete-task/', function(req,res){
+
+    console.log(req.query)
+
+    let id = req.query.id
+
+    Task.findByIdAndDelete(id, function(err){
+
+        if(err)
+        {
+            console.log('Error in deleting object from Database')
+        }
+
+        return res.redirect('/')
+
+    })
+
 })
