@@ -65,7 +65,7 @@ app.post('/create-task', function(req,res){
     }, function(err,newTask){
 
         if(err){
-            console.log('error in creating a contact')
+            console.log('error in creating a new task')
             return;
         }
         console.log('****',newTask)
@@ -75,39 +75,49 @@ app.post('/create-task', function(req,res){
 
 });
 
-//Deleting a contact
-// app.post('/delete-task/', function(req,res){
-//     console.log(req.body);
-//     let date =req.body; 
-  
-
-//         let taskIndex= taskList.findIndex(task => task.date == date);
-    
-
-//         if(taskIndex != -1)
-//         {
-//             taskList.splice(taskIndex,1);
-//         }
-
-      
-//     return res.redirect('/');
-// })
+//Deleting a task
 
 app.get('/delete-task/', function(req,res){
 
-    console.log(req.query)
+    console.log(req.query.id)
 
-    let id = req.query.id
+    let id = req.query.id;
+   
+    Task.findByIdAndDelete(id,function(err){
 
-    Task.findByIdAndDelete(id, function(err){
+            if(err)
+            {
+                console.log('Error in deleting object from Database')
+            }
 
-        if(err)
-        {
-            console.log('Error in deleting object from Database')
-        }
-
-        return res.redirect('/')
-
-    })
+      });
+   
+      return res.redirect('/')
 
 })
+
+
+
+//Deleting Multiple Tasks, Refer Tanya's Github repo
+
+// app.get('/delete-task',function(req,res)
+// {
+//     console.log(req.query);
+//     var id=req.query;
+
+//     // to check the number of tasks to be deleted
+//     var count=Object.keys(id).length;
+//     console.log(count)
+//     for(let i=0;i<count;i++)
+//     {
+//         // deleting the task from the database by using their individual ids
+//         Task.findByIdAndDelete(Object.keys(id)[i],function(err)
+//         {
+//             if(err)
+//             {
+//                 console.log("error in deleting the task");
+//             }
+//         })
+//     }
+//     return res.redirect('back');
+// });

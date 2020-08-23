@@ -30,10 +30,10 @@
 
 						<select name="category" id="category">
 						   	
-						    <option value="work">WORK</option>
-						    <option value="office">OFFICE</option>
-						    <option value="personal">PERSONAL</option>
-						    <option value="banking">BANKING</option>
+						    <option value="WORK">WORK</option>
+						    <option value="OFFICE">OFFICE</option>
+						    <option value="PERSONAL">PERSONAL</option>
+						    <option value="BANKING">BANKING</option>
 	 					
 	 					</select>
 
@@ -77,9 +77,9 @@
 						    <input type="checkbox" id="check" name="id" value="<%=i._id%>" >
 
 			</form>
-
-					<p id="def"> <%= i.description %> </p>
-
+					<div id="taskdef">
+						<p id="def"> <%= i.description %> </p>
+					</div>
 					<div id="task-cat">
 
 						<span> <%= i.category %> </span> 
